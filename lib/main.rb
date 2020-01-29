@@ -2,16 +2,17 @@
 
 require 'HTTParty'
 require 'Nokogiri'
+require 'erb'
 require 'Pry'
 
-class Watches
+class AppleWatch
     attr_reader :parse_page
     def initialize
         page = HTTParty.get('https://www.nike.com/w/watches-2axv8')
         parse_page = Nokogiri::HTML(page)
     end
 
-#it extract and store Nike Apple watch names
+    #it extract and store Nike Apple watch names
 
     def names
       watch_name = []
@@ -20,7 +21,8 @@ class Watches
         watch_name << item_container
       end
     end
-#extract and store Nike Apple watch subtitles
+
+    #extract and store Nike Apple watch subtitles
 
     def titles
         sub_title = []
@@ -29,7 +31,8 @@ class Watches
             sub_title << item_container
         end
     end
-#extract and store Nike Apple watch prices
+
+    #extract and store Nike Apple watch prices
 
     def prices
         price = []
@@ -38,12 +41,27 @@ class Watches
             price << item_container
         end
     end
-#print out names, subtitles and prices of watch
+
+    #print out names, subtitles and prices of watch
+
     def output
         watch_name = names
         sub_title = titles
         price = prices
 
-        text = ' '
+        text = ''
+        #import erb file
+        File.open('main.html.erb').each { |file| text += file }
+
+        result = ERB.new(text).result(binding)
+
+        #create a main.html file and write result into it
+
+        File.open('main.html', 'w') do |file|
+        file.write(result)
+        end
     end
 end
+
+watch = AppleWatch.new
+watch.output

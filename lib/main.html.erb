@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web Scrapping With Ruby</title>
+</head>
+
+<body>
+    <div class="title">
+        <h1>Web Scrapping of Apple Watch Nike Series</h1>
+    </div>
+
+    <section class="item-container">
+        <ul class="items">
+            <% (0...watch_name.size).each do |i|  %>
+            <li class="list-item">Name:<%= watch_name[i] %></li>
+            <li class="list-item">Subtitle:<%= sub_title[i] %></li>
+            <li class="list-item">Price:<%= price[i] %></li>
+            <%= -------------------------------------- %>
+            <% end %>
+        </ul>
+    </section>
+</body>
+
+</html>
