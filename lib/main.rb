@@ -2,66 +2,74 @@
 
 require 'HTTParty'
 require 'Nokogiri'
-require 'erb'
+require 'erubi'
 require 'Pry'
 
-class AppleWatch
+class Watch
     attr_reader :parse_page
     def initialize
         page = HTTParty.get('https://www.nike.com/w/watches-2axv8')
-        parse_page = Nokogiri::HTML(page)
+        @parse_page = Nokogiri::HTML(page)
     end
 
     #it extract and store Nike Apple watch names
 
-    def names
+    def get_names
       watch_name = []
-      parse_page.css('.product-card__link-overlay').map do |item|
+      product_container.css('.product-card__link-overlay').map do |item|
         item_container = item.text
         watch_name << item_container
       end
+      watch_name
     end
 
     #extract and store Nike Apple watch subtitles
 
-    def titles
+    def get_titles
         sub_title = []
-        parse_page.css('.product-card__subtitle').map do |item|
+        product_container.css('.product-card__subtitle').map do |item|
             item_container = item.text unless item.css('.product-card__subtitle').nil?
             sub_title << item_container
         end
+        sub_title
     end
 
     #extract and store Nike Apple watch prices
 
-    def prices
+    def get_prices
         price = []
-        parse_page.css('.css-b9fpep').map do |item|
+        product_container.css('.css-b9fpep').map do |item|
             item_container = item.text unless item.css('.css-b9fpep').nil?
             price << item_container
         end
+        price
     end
 
     #print out names, subtitles and prices of watch
 
     def output
-        name = names
-        title = titles
-        price = prices
+      name = get_names
+      title = get_titles
+      price = get_prices
 
-        text = ''
-        #import erb file
-        File.open('main.html.erb').each { |file| text += file }
+      word = ''
+      File.open('scraper.html.erb').each do |file|
+        word += file
+      end
 
-        result = ERB.new(text).result(binding)
+      result = ERB.new(word).result(binding)
+      puts result
 
-        #create a main.html file and write result into it
-
-        File.open('main.html', 'w') do |file|
+      File.open('main.html', 'w') do |file|
         file.write(result)
-        end
+      end
+    end
+
+    private
+    def product_container
+        parse_page.css('.product-grid__items').css('.product-grid__card')
     end
 end
 
-watch = AppleWatch.new
-watch.output
+watch = Watch.new
+puts watch.output

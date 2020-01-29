@@ -15,11 +15,11 @@
 
     <section class="item-container">
         <ul class="items">
-            <% (0...name.size).each do |i|  %>
+            <% (0..name.size-1).each do |i|  %>
             <li class="list-item">Name:<%= name[i] %></li>
             <li class="list-item">Subtitle:<%= title[i] %></li>
             <li class="list-item">Price:<%= price[i] %></li>
-            <%= -------------------------------------- %>
+            <%= '--------------------------------------' %>
             <% end %>
         </ul>
     </section>
