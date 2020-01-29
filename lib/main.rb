@@ -11,7 +11,8 @@ class Watches
         parse_page = Nokogiri::HTML(page)
     end
 
-#method that extract and store Nike Apple watch product
+#it extract and store Nike Apple watch names
+
     def names
       watch_name = []
       parse_page.css('.product-card__link-overlay').map do |item|
@@ -19,14 +20,16 @@ class Watches
         watch_name << item_container
       end
     end
+#extract and store Nike Apple watch subtitles
 
     def titles
-        title = []
+        sub_title = []
         parse_page.css('.product-card__subtitle').map do |item|
             item_container = item.text unless item.css('.product-card__subtitle').nil?
-            title << item_container
+            sub_title << item_container
         end
     end
+#extract and store Nike Apple watch prices
 
     def prices
         price = []
@@ -34,5 +37,13 @@ class Watches
             item_container = item.text unless item.css('.css-b9fpep').nil?
             price << item_container
         end
+    end
+#print out names, subtitles and prices of watch
+    def output
+        watch_name = names
+        sub_title = titles
+        price = prices
+
+        text = ' '
     end
 end
