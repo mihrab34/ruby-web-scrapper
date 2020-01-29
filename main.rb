@@ -60,16 +60,15 @@ class Watch
       result = ERB.new(word).result(binding)
       puts result
 
-      File.open('main.html', 'w') do |file|
+      File.open('scraper.html', 'w') do |file|
         file.write(result)
       end
     end
 
-    private
     def product_container
         parse_page.css('.product-grid__items').css('.product-grid__card')
     end
 end
 
 watch = Watch.new
-puts watch.output
+watch.output
