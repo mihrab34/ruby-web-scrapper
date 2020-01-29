@@ -45,8 +45,8 @@ class AppleWatch
     #print out names, subtitles and prices of watch
 
     def output
-        watch_name = names
-        sub_title = titles
+        name = names
+        title = titles
         price = prices
 
         text = ''

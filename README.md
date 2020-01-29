@@ -1,44 +1,54 @@
-# ruby-web-scrapper
+# Web Scraping With Ruby and Nokogiri
 
-This project is a part of [Microverse](https://www.microverse.org/) Ruby Curriculum
 
 # Table of Content
 
 
 * [About the Project](https://github.com/mihrab34/ruby-web-scrapper/blob/development/README.md#about-the-project)
-* [Built With](https://github.com/mihrab34/ruby-web-scrapper/blob/development/README.md#built-with)
-* [Authors](https://github.com/mihrab34/ruby-web-scrapper/blob/development/README.md#authors)
+* [Technology and Dependencies](https://github.com/mihrab34/ruby-web-scrapper/blob/development/README.md#technology-and-dependencies)
+* [Requirements](https://github.com/mihrab34/ruby-web-scrapper/blob/development/README.md#requirements)
+* [Setup](https://github.com/mihrab34/ruby-web-scrapper/blob/development/README.md#setup)
+* [Author](https://github.com/mihrab34/ruby-web-scrapper/blob/development/README.md#author)
 * [Contribution](https://github.com/mihrab34/ruby-web-scrapper/blob/development/README.md#contribution)
 
 # About the Project
 
-* The objective is to create a test case for all the enumerable methods concluded in the previous projects.
-* The project was completed using Ruby language.
-* Original project specification at [The Odin Project](https://www.theodinproject.com/courses/ruby-programming/lessons/testing-your-ruby-code)
-)
+This project is a capstone project which is the part of new adjustments in [Microverse](https://www.microverse.org/) curriculum. It is a solo project done at the end of every course in the technical curriculum. Ruby Language is used to scrape Nike website watch category to get information on product names, title and prices.
 
-# Built With
+# Technology and Dependencies
 
-This project was built using these technologies.
+This project was built using these technologies and dependencies.
 
 * Ruby
+* Nokogiri gem
+* HTTParty gem
+* Erb gem
 * Rubocop
-* VsCode
+* Stickler
 
-# Usage Instructions
+# Requirements
 
-* Clone the repository and run the app.
+* Ruby: Ruby must have been downloaded and installed on your computer. Download it [here](https://www.ruby-lang.org/en/downloads/) if it is not available.
+* Nokogiri: You must have Nokogiri Ruby gem installed on your local system. Open your terminal and run ``` gem install nokogiri ``` to install.
+* HTTParty: You must have HTTParty Ruby gem installed on your local system. Open your terminal and run this command. ``` gem install httparty ``` to install.
+
+# Setup
+
+* Install ruby on your computer system.
+* Install all the Rubygems listed in the Gemfile with this command ``` bundle install ```
+* Clone the repository and run the app
 
 ~~~~
 
-$ git clone git@github.com:mihrab34/enumerable-rspec-testing.git
-$ cd  ENUMERABLE-RSPEC-TESTING
-$ ruby rspec
+$ git clone git@github.com:mihrab34/ruby-web-scrapper.git
+$ cd  ruby-web-scrapper
+$ run ruby lib/main.rb to view on terminal
+$ open main.html to view on browser
 
 ~~~~
 
 
-# Authors
+# Author
 
 [@mihrab34](https://github.com/mihrab34)
 
