@@ -15,7 +15,9 @@
 
 This project is a capstone project which is the part of new adjustments in [Microverse](https://www.microverse.org/) curriculum. It is a solo project done at the end of every course in the technical curriculum. Ruby Language is used to scrape Nike website watch category to get information on product names, title and prices.
 
-![image](image/scrapper-output.png)
+> Output displayed on browser  
+> ![image](image/scrapper-output.png)
+
 
 # Technology and Dependencies
 
@@ -48,7 +50,6 @@ This project was built using these technologies and dependencies.
 gem install nokogiri
 gem install httparty
 gem install erubi
-gem install pry
 gem install launchy
 
 ~~~
