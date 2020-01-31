@@ -7,13 +7,15 @@
 * [About the Project](https://github.com/mihrab34/ruby-web-scrapper/blob/development/README.md#about-the-project)
 * [Technology and Dependencies](https://github.com/mihrab34/ruby-web-scrapper/blob/development/README.md#technology-and-dependencies)
 * [Requirements](https://github.com/mihrab34/ruby-web-scrapper/blob/development/README.md#requirements)
-* [Setup](https://github.com/mihrab34/ruby-web-scrapper/blob/development/README.md#setup)
+* [Setup and Installations](https://github.com/mihrab34/ruby-web-scrapper/blob/development/README.md#setup-and-installations)
 * [Author](https://github.com/mihrab34/ruby-web-scrapper/blob/development/README.md#author)
 * [Contribution](https://github.com/mihrab34/ruby-web-scrapper/blob/development/README.md#contribution)
 
 # About the Project
 
 This project is a capstone project which is the part of new adjustments in [Microverse](https://www.microverse.org/) curriculum. It is a solo project done at the end of every course in the technical curriculum. Ruby Language is used to scrape Nike website watch category to get information on product names, title and prices.
+
+![image](image/scrapper-output.png)
 
 # Technology and Dependencies
 
@@ -22,28 +24,45 @@ This project was built using these technologies and dependencies.
 * Ruby
 * Nokogiri gem
 * HTTParty gem
-* Erb gem
+* Erubi gem
+* Launchy gem
 * Rubocop
 * Stickler
+* Rspec
 
 # Requirements
 
 * Ruby: Ruby must have been downloaded and installed on your computer. Download it [here](https://www.ruby-lang.org/en/downloads/) if it is not available.
-* Nokogiri: You must have Nokogiri Ruby gem installed on your local system. Open your terminal and run ``` gem install nokogiri ``` to install.
-* HTTParty: You must have HTTParty Ruby gem installed on your local system. Open your terminal and run this command. ``` gem install httparty ``` to install.
+* Nokogiri: Gem must be installed on your local system.
+* HTTParty: Gem must be installed on your local system.
+* Erubi: Gem must be installed on your local system.
+* Launchy: Gem must be installed on your local system.
 
-# Setup
+# Setup and Installations
 
 * Install ruby on your computer system.
-* Install all the Rubygems listed in the Gemfile with this command ``` bundle install ```
+* Install all the Rubygems dependecies listed in the Gemfile with ``` bundle install ``` or
+
+~~~
+
+gem install nokogiri
+gem install httparty
+gem install erubi
+gem install pry
+gem install launchy
+
+~~~
+
+Check out [Ruby gems](https://rubygems.org/) for more information on installing ruby gems.
+
 * Clone the repository and run the app
 
 ~~~~
 
 $ git clone git@github.com:mihrab34/ruby-web-scrapper.git
 $ cd  ruby-web-scrapper
-$ run ruby lib/main.rb to view on terminal
-$ open main.html to view on browser
+$ run ruby bin/main.rb to view on terminal and browser automatically
+$ run rspec on terminal for testing
 
 ~~~~
 

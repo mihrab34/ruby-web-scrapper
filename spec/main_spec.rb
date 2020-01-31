@@ -1,4 +1,4 @@
-require_relative '../main.rb'
+require_relative '../bin/main.rb'
 
 RSpec.describe "Watch" do
     let(:watch) { Watch.new }
@@ -23,7 +23,7 @@ RSpec.describe "Watch" do
 
     describe "#output" do
         it "returns name, title and price of products" do
-            expect(watch.output.class).to  be(Integer)
+            expect(watch.output.class).to  be(TrueClass)
         end 
     end
 

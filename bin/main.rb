@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
 
-require 'HTTParty'
-require 'Nokogiri'
+require 'httparty'
+require 'nokogiri'
 require 'erubi'
-require 'Pry'
+require 'launchy'
 
 class Watch
     attr_reader :parse_page
@@ -63,6 +63,8 @@ class Watch
       File.open('scraper.html', 'w') do |file|
         file.write(result)
       end
+
+      Launchy.open('./scraper.html')
     end
 
     def product_container
@@ -71,4 +73,4 @@ class Watch
 end
 
 watch = Watch.new
-watch.output
+puts watch.output.class
